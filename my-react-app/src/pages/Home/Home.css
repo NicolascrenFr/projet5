@@ -1,0 +1,52 @@
+/* Reset de base */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Contenu principal */
+  .home-content {
+    flex: 1;
+    width: 95%;
+    max-width: 1240px;
+    margin: -55px auto;
+    padding: 20px;
+  }
+  
+  /* Conteneur des cartes avec fond gris */
+  .cards-wrapper {
+    background: #F6F6F6;
+    border-radius: 25px;
+    padding: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+  }
+  
+  /* Grille des cartes */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+  }
+  
+  /* Version tablette */
+  @media (max-width: 1024px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Version mobile */
+  @media (max-width: 768px) {
+    .cards-wrapper {
+      background: none;
+      padding: 0;
+    }
+    
+    .cards-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
