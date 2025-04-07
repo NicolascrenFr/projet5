@@ -1,0 +1,31 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    text-align: center;
+    color: #FF6060;
+    padding: 2rem;
+    background-color: white; /* Fond blanc pour mieux voir l'image */
+}
+
+.error-page img {
+    max-width: 600px; /* Ajustez selon la taille souhaitée */
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.error-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.error-page p {
+    font-size: 1.5rem;
+}
+
+.error-link {
+    color: black;
+    text-decoration: underline;
+}

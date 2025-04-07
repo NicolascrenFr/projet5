@@ -3,7 +3,9 @@
     display: flex;
     justify-content: space-between; /* Sépare logo et nav */
     align-items: center; /* Alignement vertical */
-    padding: 40px 100px; /* Augmentation du padding pour plus d'espace */
+    padding: 30px; /* Augmentation du padding pour plus d'espace */
+    padding-left: 5%;
+    padding-right: 5%;
     max-width: 1440px;
 }
 
@@ -30,6 +32,13 @@
     font-weight: 500;
     position: relative;
 }
+
+.nav-link--active {
+    text-decoration: underline;
+    /* Ou pour un effet plus visible : */
+    /* border-bottom: 2px solid #FF6060; */
+    /* text-decoration-thickness: 2px; */
+  }
 
 /* Animation hover Kasa */
 .nav-link:hover {

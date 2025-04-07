@@ -14,12 +14,17 @@ const Home = () => {
       <main className="home-content">
         <Baniere />
         
-        <div className="cards-wrapper"> {/* Conteneur du fond gris */}
-          <div className="cards-container">
-            {logements.slice(0, 6).map((property) => (
-              <Card key={property.id} property={property} />
-            ))}
-          </div>
+        <div className="cards-wrapper">
+          {/* Début du bloc bonus - Vérification des données */}
+          {logements && logements.length > 0 ? (
+            <div className="cards-container">
+              {logements.map((property) => (
+                <Card key={property.id} property={property} />
+              ))}
+            </div>
+          ) : (
+            <p className="no-lodgings-message">Aucun logement disponible pour le moment.</p>
+          )}
         </div>
       </main>
       <Footer />
