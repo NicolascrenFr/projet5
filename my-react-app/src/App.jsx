@@ -22,6 +22,8 @@ function App() {
         {/* Route pour toutes les URL non définies (page d'erreur 404) */}
         <Route path="*" element={<Error/>} />
 
+        <Route path="/logement/:id" element={<FicheLogement />} />
+
       </Routes>
     </Router>
   );

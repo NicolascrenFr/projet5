@@ -1,5 +1,5 @@
   import React from 'react';
-  import Baniere from "../../components/Baniere2";
+  import Baniere from "../../components/Baniere2/Baniere2";
   import Header from '../../components/Header';
   import Footer from '../../components/Footer';
   import Collapse from '../../components/Collapse';

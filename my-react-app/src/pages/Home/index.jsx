@@ -1,10 +1,11 @@
 import React from 'react';
 import logements from "@/logements.json";
-import Baniere from "../../components/Baniere";
+import Baniere from "../../components/Baniere/Baniere";
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import "./Home.css"; // Import correct du CSS
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Baniere2.css';
+import './Baniere2.scss';
 
 function Baniere2() {
   return (
