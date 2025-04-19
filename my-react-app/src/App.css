@@ -13,6 +13,15 @@
   text-align: center;
 }
 
+/* Style global pour toutes les pages */
+.page-layout {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

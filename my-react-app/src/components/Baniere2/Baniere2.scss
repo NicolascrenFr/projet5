@@ -22,4 +22,12 @@
   &-content {
     @include banner-content-style;
   }
+
+  // Supprimez la media query existante ou modifiez-la ainsi :
+  @media (max-width: 768px) {
+    height: 150px; // Ajustez selon vos besoins
+    margin: 20px auto; // Conserve les marges
+    width: calc(100% - 40px); // Même réduction que desktop
+    // Pas de 'background: none' ni 'padding: 0'
+  }
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+// recup id logementdepuis url
 import { useParams } from 'react-router-dom';
+//liste des logements
 import logements from '@/logements.json';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Carrousel from '../../components/Carrousel/Carrousel';
+import Slideshow from '../../components/Slideshow/Slideshow';
 import Rating from '../../components/Rating/Rating';
 import Collapse from '../../components/Collapse';
 import './FicheLogement.css';
@@ -12,16 +14,28 @@ const FicheLogement = () => {
   const { id } = useParams();
   const logement = logements.find(item => item.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [openCollapse, setOpenCollapse] = useState({
+    description: false,
+    equipments: false
+  });
+
+  const toggleCollapse = (collapseName) => {
+    setOpenCollapse(prev => ({
+      ...prev,
+      [collapseName]: !prev[collapseName]
+    }));
+  };
 
   if (!logement) {
     return <div className="error-message">Logement non trouvé</div>;
   }
 
   return (
-    <div className="fiche-logement">
-      <Header /> 
+    <div className="page-container">
+      <Header />
+      <main className="fiche-logement-content">
       {/* Carrousel d'images */}
-      <Carrousel 
+      <Slideshow 
         pictures={logement.pictures} 
         currentIndex={currentImageIndex}
         setCurrentIndex={setCurrentImageIndex}
@@ -54,11 +68,21 @@ const FicheLogement = () => {
 
       {/* Sections dépliables */}
       <div className="collapse-section">
-        <Collapse title="Description" className="description-collapse">
+        <Collapse 
+          title="Description" 
+          isOpen={openCollapse.description}
+          onToggle={() => toggleCollapse('description')}
+          className="description-collapse"
+        >
           <p>{logement.description}</p>
         </Collapse>
 
-        <Collapse title="Équipements" className="equipments-collapse">
+        <Collapse 
+          title="Équipements" 
+          isOpen={openCollapse.equipments}
+          onToggle={() => toggleCollapse('equipments')}
+          className="equipments-collapse"
+        >
           <ul>
             {logement.equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
@@ -66,7 +90,8 @@ const FicheLogement = () => {
           </ul>
         </Collapse>
       </div>
-      <Footer /> 
+      </main>
+      <Footer />
     </div>
   );
 };

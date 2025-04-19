@@ -8,29 +8,44 @@
   /* Contenu principal */
   .home-content {
     flex: 1;
-    width: 100%;
-    max-width: 1240px;
+    width: 90%;
+    /* max-width: 1240px; */
     margin: -40px auto;
-    padding-left: 7%;
-    padding-right: 7%;
+    /* padding-left: 7%;
+    padding-right: 7%; */
   }
   
   /* Conteneur des cartes avec fond gris*/
   .cards-wrapper {
     background: #F6F6F6;
     border-radius: 25px;
-    padding: 40px;
-    margin-left: 20px;
+    /* padding: 40px; */
+    /* margin-left: 20px;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 40px; */
+    padding: 40px 40px; /* Espacement interne */
+    margin: 40px 0;
+    /* max-width: 1240px; Même largeur max que la bannière */
+    /* width: 100%; */
   }
   
   /* Grille des cartes */
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 50px 30px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    /* gap: 50px 30px; */
+    gap: 50px;
+    /* justify-items: center; */
+    /* padding: 0 20px; Alignement avec la bannière */
   }
+
+  /* Liens des cards */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  /* display: block;
+  height: 100%; */
+}
 
   /* Dans votre fichier CSS global ou composant parent */
 .banner-container {
@@ -41,6 +56,16 @@
   max-width: 1240px; /* Ajustez selon votre layout */
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal pour l'alignement */
+.content-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .banner-content, 
@@ -74,10 +99,13 @@
     .cards-wrapper {
       background: none;
       padding: 0;
+      margin: 20px 0;
+      /* width: 100%; */
     }
     
     .cards-container {
       grid-template-columns: 1fr;
       gap: 20px;
+      /* padding: 0; */
     }
   }
