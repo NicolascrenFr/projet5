@@ -29,3 +29,13 @@
     color: black;
     text-decoration: underline;
 }
+
+.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: black;
+    text-decoration: underline;
+    font-size: 18px;
+    transition: color 0.2s;
+  }
+  

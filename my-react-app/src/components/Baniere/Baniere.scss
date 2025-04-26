@@ -58,4 +58,16 @@ $banner-common: (
     padding: 0 20px;
     margin: 0;
   }
+
+  /* Style spécifique pour mobile */
+@media (max-width: 768px) {
+  h1 {
+    margin: 0 auto;       /* Centre le bloc */
+    text-align: left;     /* Texte aligné à gauche dans le bloc */
+    max-width: 100%;      /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Padding inclus dans la largeur */
+    /* Conserve toutes les autres propriétés existantes */
+  }
+}
+
 }

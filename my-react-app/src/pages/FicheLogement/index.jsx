@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // recup id logementdepuis url
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 //liste des logements
 import logements from '@/logements.json';
 import Header from '../../components/Header';
@@ -11,14 +11,16 @@ import Collapse from '../../components/Collapse';
 import './FicheLogement.css';
 
 const FicheLogement = () => {
-  const { id } = useParams();
-  const logement = logements.find(item => item.id === id);
+  const { id } = useParams(); //extrait id de l'url
+  const logement = logements.find(item => item.id === id); // cherche logement dans json
+  // gere image dans carrousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [openCollapse, setOpenCollapse] = useState({
     description: false,
     equipments: false
   });
 
+  // inverse ouvert/ferme
   const toggleCollapse = (collapseName) => {
     setOpenCollapse(prev => ({
       ...prev,
@@ -26,9 +28,10 @@ const FicheLogement = () => {
     }));
   };
 
-  if (!logement) {
-    return <div className="error-message">Logement non trouvé</div>;
-  }
+    // Redirection vers la page d'erreur si logement non trouvé
+    if (!logement) {
+      return <Navigate to="/error" replace />;
+    }
 
   return (
     <div className="page-container">
@@ -37,13 +40,14 @@ const FicheLogement = () => {
       {/* Carrousel d'images */}
       <Slideshow 
         pictures={logement.pictures} 
+        // naviguer dans carrousel
         currentIndex={currentImageIndex}
         setCurrentIndex={setCurrentImageIndex}
       />
 
       {/* Section titre et informations */}
       <section className="info-section">
-        <div className="left-info">
+        <div className="left-info"> 
           <h1>{logement.title}</h1>
           <p className="location">{logement.location}</p>
           <div className="tags">
